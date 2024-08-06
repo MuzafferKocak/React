@@ -1,6 +1,7 @@
 
 
 import "./Main.css"
+import krähe from "./images/crow-922740_960_720.jpg"
 
 const Main = () => {
     //! JS bereich
@@ -33,6 +34,13 @@ const Main = () => {
             <img className="img" src="https://cdn.pixabay.com/photo/2019/11/18/18/29/mountain-4635428_960_720.jpg" alt="plateau" />
 
             <img className="img" src="https://cdn.pixabay.com/photo/2017/10/25/12/13/landscapes-2887796_1280.jpg" alt="wald" />
+
+            <img id="img-id" src="https://cdn.pixabay.com/photo/2017/08/06/11/03/gantrischseeli-2591314_1280.jpg" alt="Berg" />
+
+            {/* //* bei lokale bild müssen wir importieren */}
+            <img className="img" src={krähe} alt="krähe" />
+            {/* //* bei public ordner müssen wir nicht importieren */}
+            <img className="img" src="./img/Kalb.jpg" alt="kalb" />
         </div>
     </main>
   )
