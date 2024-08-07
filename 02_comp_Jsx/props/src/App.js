@@ -1,10 +1,11 @@
 
-import './App.css';
+//? deafult export
+import Cat from './components/Cat';
 
 function App() {
   return (
     <div className="App">
-      <h2>Hosgeldin Ya Sehri React</h2>
+      <Cat/>
     </div>
   );
 }
