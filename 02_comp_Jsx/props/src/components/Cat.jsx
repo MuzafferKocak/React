@@ -7,14 +7,16 @@ import { Name } from "./Name"
 
 //? components werden function dec. || arrow func. erstellen
 
-const Cat =()=>{
+const Cat =({name, img, color})=>{
+    //? destraction
+    // const {name,img,color}= props
     return(
         //* JSX ausdrücke wenn mehr als ein ausdruck ist muss dieser von einem übergeordneten Ausdruck umgeben sein.
         <div>
-        <Name/>
+        <Name name={name}/>
         
-        <img src="https://cdn.pixabay.com/photo/2019/10/18/09/29/cat-4558651_1280.jpg" alt="cat-img" height="300px" />
-        <p>Color: Gray</p>
+        <img src={img} alt="cat-img" height="300px" />
+        <p style={{backgroundColor: color}}>Color: {color}</p>
         <hr />
 
         </div>
@@ -22,3 +24,19 @@ const Cat =()=>{
 }
 
 export default Cat
+
+// const Cat =(props)=>{
+//     return(
+//         //* JSX ausdrücke wenn mehr als ein ausdruck ist muss dieser von einem übergeordneten Ausdruck umgeben sein.
+//         <div>
+//         <Name/>
+        
+//         <img src={props.img} alt="cat-img" height="300px" />
+//         <p style={{backgroundColor: props.color}}>Color: {props.color}</p>
+//         <hr />
+
+//         </div>
+//     )
+// }
+
+// export default Cat
