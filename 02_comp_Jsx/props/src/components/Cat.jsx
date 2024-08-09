@@ -13,7 +13,7 @@ const Cat = ({ name, img, color = "grey", isBlueEyed }) => {
     //* JSX ausdrücke wenn mehr als ein ausdruck ist muss dieser von einem übergeordneten Ausdruck umgeben sein.
     <div>
       <Name name={name} />
-      {/* //* In JSX können wir kein if/else benutzen nur Ternary benutzen */}
+      {/* //* In JSX können wir kein if/else benutzen, nur Ternary benutzen */}
       <p>Blue Eyed ? : {isBlueEyed ? "Yes" : "No"}</p>
 
       <img src={img} alt="cat-img" height="300px" />
