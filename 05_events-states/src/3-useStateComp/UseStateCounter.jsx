@@ -4,7 +4,7 @@ const UseStateCounter = () => {
   //? local variable
   // let counter = 0
 
-  //? useState
+  //? useState Hook
   const [counter, setCounter] = useState(0);
 
   const handleInc = () => {
@@ -13,21 +13,20 @@ const UseStateCounter = () => {
     // console.log(counter);
   };
 
-  const handleDec = () => {
-    setCounter(counter - 1);
-  };
+  //* hier haben wir Inline gemacht
+//   const handleDec = () => {
+//     setCounter(counter - 1);
+//   };
 
-  const handleClr =()=>{
-    setCounter(counter )
-  }
+  
 
   return (
     <div>
       <h2>UseState Counter</h2>
       <h1>Count: {counter}</h1>
       <button onClick={handleInc}>INC</button>
-      <button onClick={handleClr}>CLR</button>
-      <button onClick={handleDec}>DEC</button>
+      <button onClick={()=> setCounter(0)}>CLR</button>
+      <button onClick={()=> setCounter( counter -1)}>DEC</button>
     </div>
   );
 };
