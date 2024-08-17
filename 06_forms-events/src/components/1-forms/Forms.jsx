@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 function Forms() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPAssword] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleUsername = (e) => {
     // console.log(e.target.value); //? gibt den wert in der Input zurück
@@ -14,8 +14,24 @@ function Forms() {
 
   console.log(username);
 
+  const handleSubmit = (e) => {
+    console.log(e);
+    e.preventDefault() //? Deaktivieren von Submit verhalten
+
+    alert(`
+        username: ${username},
+        email: ${email},
+        password: ${password}, 
+      `) 
+
+        //? Löschen von daten in inputs
+        setUsername("")
+        setEmail("")
+        setPassword("")
+  }
+
   return (
-    <Form>
+    <Form on onSubmit={handleSubmit}>
       <h1 className="text-danger">FORMS</h1>
       <Form.Group className="mb-3" controlId="username">
       {/* //* Short circuit oder Ternary bedingtes rendern  */}
@@ -32,7 +48,7 @@ function Forms() {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="email">
-        <Form.Label>{email && <span>Email: {email}</span>}</Form.Label>
+        <Form.Label>Email: </Form.Label>
         <Form.Control 
         type="email" 
         placeholder="Enter email"
@@ -48,7 +64,7 @@ function Forms() {
         <Form.Control 
         type="password" 
         placeholder="Password"
-        onChange={(e)=> setPAssword(e.target.value)}
+        onChange={(e)=> setPassword(e.target.value)}
         id="password"
         name="password"
         value={password}
