@@ -1,12 +1,14 @@
 import Forms from "./components/1-forms/Forms";
+// import {Container} from "react-bootstrap"
+import Container from "react-bootstrap/Container"
 
 
 
 function App() {
   return (
-    <div className="App">
+    <Container className=" mt-4">
       <Forms/>
-    </div>
+    </Container>
   );
 }
 
