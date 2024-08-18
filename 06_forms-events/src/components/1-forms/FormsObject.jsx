@@ -13,9 +13,10 @@ function FormsObject() {
   const { username, email, password } = data;
 
   const handleData = (e) => {
-    console.log(e.target);
-
-    setData({ ...data, [e.target.name]: e.target.value });
+    // console.log(e.target.id);
+    // console.log(e.target.name);
+//? Status aktualisieren mit square bracket
+    setData({ ...data, [e.target.id]: e.target.value });
   };
 
   const handleSubmit = (e) => {
@@ -27,6 +28,8 @@ function FormsObject() {
         email: ${email},
         password: ${password}, 
       `);
+
+      setData({username: "", email: "", password: ""})
   };
 
   return (
