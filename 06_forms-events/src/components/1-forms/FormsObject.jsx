@@ -15,7 +15,7 @@ function FormsObject() {
   const handleData = (e) => {
     // console.log(e.target.id);
     // console.log(e.target.name);
-//? Status aktualisieren mit square bracket
+//? Status aktualisieren mit square bracket und den Parameter e.target.id verwendet.
     setData({ ...data, [e.target.id]: e.target.value });
   };
 
@@ -35,7 +35,7 @@ function FormsObject() {
   return (
     <Form on onSubmit={handleSubmit}>
       <h1 className="text-danger">FORMS OBJECT</h1>
-      <Form.Group className="mb-3" controlId="username">
+      <Form.Group className="mb-3" >
         <Form.Label>{username && <span>Hello {username}</span>}</Form.Label>
         <Form.Control
           type="text"
@@ -48,7 +48,7 @@ function FormsObject() {
         />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="email">
+      <Form.Group className="mb-3" >
         <Form.Label>Email: </Form.Label>
         <Form.Control
           type="email"
@@ -60,7 +60,7 @@ function FormsObject() {
         />
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="password">
+      <Form.Group className="mb-3" >
         <Form.Label>Password</Form.Label>
         <Form.Control
           type="password"
