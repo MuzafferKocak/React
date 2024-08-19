@@ -1,8 +1,10 @@
 // import Forms from "./components/1-forms/Forms";
 // import {Container} from "react-bootstrap"
 import Container from "react-bootstrap/Container"
+import MouseEvent from "./components/3-mouseEvents/MouseEvent";
 // import FormsObject from "./components/1-forms/FormsObject";
-import KeyboardClipboard from "./components/2-keyboardClipboardEvents/KeyboardClipboard";
+// import KeyboardClipboard from "./components/2-keyboardClipboardEvents/KeyboardClipboard";
+
 
 
 
@@ -11,7 +13,8 @@ function App() {
     <Container className=" mt-4">
       {/* <Forms/> */}
       {/* <FormsObject/> */}
-      <KeyboardClipboard/>
+      {/* <KeyboardClipboard/> */}
+      <MouseEvent/>
     </Container>
   );
 }
