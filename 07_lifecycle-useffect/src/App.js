@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import LifeCycleMethods from './components/LifeCycleMethods';
 import UseEffectHook from './components/UseEffectHook';
+import User from './components/User';
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
     <button className='btn btn-danger' onClick={()=> setSichtbar(!sichtbar)}>{sichtbar ? "Ausblenden" : "Anzeigen"}</button>
       {/* {sichtbar && <LifeCycleMethods/>} */}
 
-      {sichtbar && <UseEffectHook/>}
+      {/* {sichtbar && <UseEffectHook/>} */}
+      {sichtbar && <User/>}
 
       
     </div>
