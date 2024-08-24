@@ -9,10 +9,17 @@ const Home = () => {
 
 
   const getTutorials = async () => {
-    const URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
-    const res = await axios(URL);
+    
+
+    try {
+        // const URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
+    const res = await axios(process.env.REACT_APP_URL);
     console.log(res.data);
     setTutorials(res.data)
+    } catch (error) {
+        console.log(error);
+    }
+   
   };
 
   //? componentDidMount (nach dem ersten rendern, einmal Anfrage senden)
@@ -24,7 +31,7 @@ const Home = () => {
 
   return (
     <>
-      <AddTutorial />
+      <AddTutorial getTutorials={getTutorials}/>
       <TutorialList tutorials = {tutorials}/>
     </>
   );
