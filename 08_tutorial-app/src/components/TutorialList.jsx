@@ -2,6 +2,7 @@ import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import axios from "axios";
 import EditModal from "./EditModal";
+import { useState } from "react";
 
 const TutorialList = ({ tutorials, getTutorials }) => {
   //? mock data
@@ -22,6 +23,8 @@ const TutorialList = ({ tutorials, getTutorials }) => {
   //     description: "JS library for UI design",
   //   },
   // ]
+
+  const [editData, setEditData] = useState("")
 
   const deleteTutorial = async (id) => {
     try {
@@ -60,6 +63,7 @@ const TutorialList = ({ tutorials, getTutorials }) => {
                     className="me-2 text-warning"
                     data-bs-toggle="modal"
                     data-bs-target="#openModal"
+                    onClick={()=> setEditData(item)}
                   />
                   <AiFillDelete
                     size={22}
@@ -73,7 +77,7 @@ const TutorialList = ({ tutorials, getTutorials }) => {
           })}
         </tbody>
       </table>
-      <EditModal />
+      <EditModal editData= {editData}/>
     </div>
   );
 };
