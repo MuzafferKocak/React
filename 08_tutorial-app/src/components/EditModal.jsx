@@ -1,7 +1,8 @@
+import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 
-const EditModal = ({ editData }) => {
+const EditModal = ({ editData, getTutorials  }) => {
   console.log(editData);
 
   const [title, setTitle] = useState(editData.title);
@@ -13,10 +14,26 @@ const EditModal = ({ editData }) => {
     setDescription(editData.description);
   }, [editData]);
 
+  const editTutorial = async(tutorial)=> {
+    try {
+      // await axios.put(`${process.env.REACT_APP_URL}${editData.id}/`, title, description)
+      await axios.put(`${process.env.REACT_APP_URL}${editData.id}/`, tutorial)
+      getTutorials()
+    } catch (error) {
+      console.log(error);
+      
+    }
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    const newTutor = { title, description };
+    editTutorial(newTutor)
     
   };
+
+  console.log(title);
+  console.log(description);
   return (
     <>
       <div
@@ -70,7 +87,7 @@ const EditModal = ({ editData }) => {
                   />
                 </div>
                 <div className="d-flex justify-content-center align-items-center gap-2">
-                  <button type="submit" className="btn btn-danger ">
+                  <button type="submit" className="btn btn-danger " data-bs-dismiss="modal">
                     Submit
                   </button>
                   <button className="btn btn-secondary" data-bs-dismiss="modal">
