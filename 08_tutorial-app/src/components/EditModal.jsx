@@ -4,18 +4,11 @@ const EditModal = () => {
   return (
     <>
   
-  <button
-    type="button"
-    className="btn btn-primary"
-    data-bs-toggle="modal"
-    data-bs-target="#exampleModal"
-  >
-    Launch demo modal
-  </button>
+  
 
   <div
     className="modal fade"
-    id="exampleModal"
+    id="openModal"
     tabIndex={-1}
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
@@ -24,7 +17,7 @@ const EditModal = () => {
       <div className="modal-content">
         <div className="modal-header">
           <h1 className="modal-title fs-5" id="exampleModalLabel">
-            Modal title
+            Edit Tutorial
           </h1>
           <button
             type="button"
