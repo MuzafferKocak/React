@@ -1,3 +1,5 @@
+import { Outlet } from "react-router-dom"
+
 const AWS = () => {
     return (
       <div className="mt-4 text-center">
@@ -6,6 +8,8 @@ const AWS = () => {
           We prepare you for AWS DevOps certifications. Our graduates land the
           best IT jobs!
         </p>
+
+        <Outlet/>
   
         
         <img

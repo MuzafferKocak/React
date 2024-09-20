@@ -9,6 +9,8 @@ import FS from "./pages/FS"
 import AWS from "./pages/AWS"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PersonDetail from "./pages/PersonDetail";
+import Azure from "./pages/Azure";
+import Google from "./pages/Google";
 
 function App() {
   return (
@@ -24,7 +26,10 @@ function App() {
 
         <Route path="/paths" element={<Paths />}>
           <Route index path="" element={<FS />}/>
-          <Route path="aws" element={<AWS/>} />
+          <Route path="aws" element={<AWS/>} >
+            <Route path="azure" element={<Azure/>} />
+            <Route path="google" element={<Google/>} />
+          </Route>
           
 
 
