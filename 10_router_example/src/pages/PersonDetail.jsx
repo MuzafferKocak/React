@@ -14,11 +14,12 @@ const PersonDetail = () => {
   
   console.log(id)
   const getPerson = () => {
+    setLoading(true)
     fetch(`https://reqres.in/api/users/${id}`)
       .then((res) => {
         if (!res.ok){
             setError(true)
-            setLoading(true)
+            setLoading(false)
             throw new Error("User can not be found")
         }
         return res.json()

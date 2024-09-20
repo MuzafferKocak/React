@@ -18,7 +18,17 @@ function App() {
         <Route path="/people" element={<People />} />
         <Route path="/people/:id" element={<PersonDetail />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/paths" element={<Paths />} />
+
+
+        <Route path="/paths" element={<Paths />}>
+          <Route/>
+          <Route/>
+          
+
+
+        </Route>
+
+
         <Route path="*" element={<NotFound />} />
       </Routes>
 
