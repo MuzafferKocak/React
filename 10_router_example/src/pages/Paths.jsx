@@ -1,5 +1,8 @@
+import { Outlet, useNavigate } from "react-router-dom";
+
 const Paths = () => {
-  
+  const navigate = useNavigate();
+
   return (
     <div className="container mt-4">
       <h1>
@@ -13,23 +16,20 @@ const Paths = () => {
         experts!
       </p>
       <div>
-        <button
-          className="btn btn-success w-50"
-          
-        >
+        <button className="btn btn-success w-50" onClick={() => navigate("fs")}>
           FS
         </button>
         <button
           className="btn btn-warning w-50"
-          
+          onClick={() => navigate("aws")}
         >
           Aws-Devops
         </button>
+
+        <Outlet />
       </div>
-
-      
     </div>
-  )
-}
+  );
+};
 
-export default Paths
+export default Paths;

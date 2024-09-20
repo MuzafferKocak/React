@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import People from "./pages/People";
 import Paths from "./pages/Paths";
 import NotFound from "./pages/NotFound";
+import FS from "./pages/FS"
+import AWS from "./pages/AWS"
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PersonDetail from "./pages/PersonDetail";
 
@@ -21,8 +23,8 @@ function App() {
 
 
         <Route path="/paths" element={<Paths />}>
-          <Route/>
-          <Route/>
+          <Route path="fs" element={<FS />}/>
+          <Route path="aws" element={<AWS/>} />
           
 
 
