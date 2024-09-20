@@ -23,7 +23,7 @@ function App() {
 
 
         <Route path="/paths" element={<Paths />}>
-          <Route path="fs" element={<FS />}/>
+          <Route index path="" element={<FS />}/>
           <Route path="aws" element={<AWS/>} />
           
 
