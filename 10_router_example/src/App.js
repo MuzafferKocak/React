@@ -11,6 +11,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PersonDetail from "./pages/PersonDetail";
 import Azure from "./pages/Azure";
 import Google from "./pages/Google";
+import Login from "./pages/Login";
+import PrivateRouter from "./pages/PrivateRouter";
 
 function App() {
   return (
@@ -19,8 +21,12 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/people" element={<People />} />
-        <Route path="/people/:id" element={<PersonDetail />} />
+
+        <Route path="/people" element={<PrivateRouter/>} >
+        <Route path="" element={<People />} />
+        <Route path=":id" element={<PersonDetail />} />
+        </Route>
+        
         <Route path="/contact" element={<Contact />} />
 
 
@@ -34,6 +40,9 @@ function App() {
 
 
         </Route>
+
+        <Route path="/login" element={<Login />} />
+
 
 
         <Route path="*" element={<NotFound />} />
