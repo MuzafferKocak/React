@@ -25,6 +25,13 @@ const Typografy = () => {
     <p className='line-through'>Hello</p>
     <p className='uppercase'>Hello</p>
     <p className='lowercase'>Hello</p>
+    <p className='text-red-400'>Hello</p>
+    <p className='text-red-900'>Hello</p>
+    <p className='text-green-900'>Hello</p>
+    <p className='text-[#1E0342] font-bold'>Hello</p>
+    <p className='text-[rgb(154,200,2005)] font-bold'>Hello</p>
+    <p className='bg-[rgb(154,200,2005)] font-bold'>Hello</p>
+    <p className='bg-[#E1F7F5] font-bold'>Hello</p>
     </div>
   )
 }
