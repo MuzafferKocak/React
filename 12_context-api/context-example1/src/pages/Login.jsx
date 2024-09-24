@@ -16,7 +16,9 @@ const Login = () => {
     e.preventDefault();
 
     user?.email && user?.password && setSigned(true)
-    navigate("/people")
+    // navigate("/people")
+    setUser({email: "", password: ""})
+    navigate(-1) //? navigiere vorherigen seite (people)
   };
 console.log(user);
 
