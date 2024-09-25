@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { createContext } from "react";
 
 
@@ -16,6 +16,11 @@ const LoginProvider = (props) => {
 
     </LoginContext.Provider>
   )
+}
+
+//? 3) Custom Hook für Consuming
+export const useLoginContext = ()=> {
+  return useContext(LoginContext)
 }
 
 export default LoginProvider

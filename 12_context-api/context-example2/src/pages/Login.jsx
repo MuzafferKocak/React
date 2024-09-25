@@ -1,14 +1,17 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { LoginContext } from "../context/LoginProvider";
+// import { LoginContext } from "../context/LoginProvider";
 import { useNavigate } from "react-router-dom";
+import { useLoginContext } from "../context/LoginProvider";
 
 const Login = () => {
   const [user, setUser] = useState({ email: "", password: "" });
   //? 3) Login Context Consuming
-  const { setSigned } = useContext(LoginContext);
+  // const { setSigned } = useContext(LoginContext);
+
+  const { setSigned } = useLoginContext()
 
   const navigate = useNavigate();
 
