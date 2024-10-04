@@ -2,9 +2,25 @@ const initialState = {
   count: 0,
 };
 
+//? Action type als Variablen definieren
 export const inc = "INC"
 export const dec = "DEC"
 export const reset = "RESET"
+
+//? Action creator definieren
+
+export const increase =( )=> {
+return {type: inc}
+
+}
+export const decrease =( )=> {
+return {type: dec}
+
+}
+export const res =( )=> {
+return {type: reset}
+
+}
 
 export const counterReducer = (state = initialState, action) => {
   switch (action.type) {

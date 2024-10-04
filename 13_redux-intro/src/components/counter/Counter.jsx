@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import "./Counter.css";
-import { dec, inc, reset } from "../../store/counterReducer";
+import { dec, decrease, inc, increase, res, reset } from "../../store/counterReducer";
 
 const Counter = () => {
   //? Der useSelector-Hook wird zum Lesen von Daten aus dem globalen State verwendet
@@ -18,7 +18,8 @@ const Counter = () => {
         <button
           className="counter-button positive"
         //   onClick={() => dispatch({ type: "INC" })}
-          onClick={() => dispatch({ type: inc })}
+        //   onClick={() => dispatch({ type: inc })}
+          onClick={() => dispatch(increase())}
         >
           increase
         </button>
@@ -26,7 +27,8 @@ const Counter = () => {
         <button
           className="counter-button zero"
         //   onClick={() => dispatch({ type: "RESET" })}
-          onClick={() => dispatch({ type: reset })}
+        //   onClick={() => dispatch({ type: reset })}
+          onClick={() => dispatch(res())}
         >
           reset
         </button>
@@ -34,7 +36,8 @@ const Counter = () => {
         <button
           className="counter-button negative"
         //   onClick={() => dispatch({ type: "DEC" })}
-          onClick={() => dispatch({ type: dec })}
+        //   onClick={() => dispatch({ type: dec })}
+          onClick={() => dispatch(decrease())}
         >
           decrease
         </button>
