@@ -9,9 +9,9 @@ export const TOGGLE = "TOGGLE";
 
 //? action creator func.
 export const addTodo = (payload) => ({ type: ADD, payload: payload });
-export const clearTodo = () => ({ type: CLR});
-export const delTodo = (id) => ({ type: DEL, payload: id});
-export const toggleTodo = (id) => ({ type: TOGGLE, payload: id});
+export const clearTodo = () => ({ type: CLR });
+export const delTodo = (id) => ({ type: DEL, payload: id });
+export const toggleTodo = (id) => ({ type: TOGGLE, payload: id });
 
 export const todoReducer = (state = initialState, { type, payload }) => {
   switch (type) {
@@ -23,18 +23,19 @@ export const todoReducer = (state = initialState, { type, payload }) => {
         ],
       };
     case CLR:
-      return initialState
+      return initialState;
 
-      case DEL:
-        return {
-            todoList: state.todoList.filter(todo => todo.id !== payload),
-          };
+    case DEL:
+      return {
+        todoList: state.todoList.filter((todo) => todo.id !== payload),
+      };
 
-      case TOGGLE:
-        return {
-            todoList: state.todoList.map(todo => todo.id === payload ? {...todo, completed: !todo.completed}: todo)
-          };
-      
+    case TOGGLE:
+      return {
+        todoList: state.todoList.map((todo) =>
+          todo.id === payload ? { ...todo, completed: !todo.completed } : todo
+        ),
+      };
 
     default:
       return state;

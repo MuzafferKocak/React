@@ -1,6 +1,6 @@
-import "./Todo.css"
-import TodoInput from "./TodoInput"
-import TodoList from "./TodoList"
+import "./Todo.css";
+import TodoInput from "./TodoInput";
+import TodoList from "./TodoList";
 
 const Todo = () => {
   return (
@@ -9,7 +9,7 @@ const Todo = () => {
       <TodoInput />
       <TodoList />
     </div>
-  )
-}
+  );
+};
 
-export default Todo
+export default Todo;

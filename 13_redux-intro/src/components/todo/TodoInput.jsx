@@ -1,18 +1,18 @@
-import { useState } from "react"
-import { useDispatch } from "react-redux"
-import { addTodo } from "../../store/todoReducer"
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../../store/todoReducer";
 
 const TodoInput = () => {
-  const [text, setText] = useState("")
-  const dispatch = useDispatch()
+  const [text, setText] = useState("");
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     //?Benachrichtigung über die Anforderung, den globalen State des Reducer durch die Benutzeroberfläche zu ändern
     // dispatch({type: "ADD", payload: text})
-    dispatch(addTodo(text))
-    setText("")
-  }
+    dispatch(addTodo(text));
+    setText("");
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -27,7 +27,7 @@ const TodoInput = () => {
         Add
       </button>
     </form>
-  )
-}
+  );
+};
 
-export default TodoInput
+export default TodoInput;
