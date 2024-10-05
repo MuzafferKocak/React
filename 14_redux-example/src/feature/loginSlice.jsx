@@ -12,8 +12,8 @@ const loginSlice = createSlice({
       state.user = action.payload;
     },
     clearUser: (state) => {
-        state.user = {email: "", password: ""}
-    }
+      state.user = { email: "", password: "" };
+    },
   },
 });
 
@@ -21,4 +21,4 @@ const loginSlice = createSlice({
 export const { setUser, clearUser } = loginSlice.actions;
 
 //? Der geschriebene Slice im Reducer sollte als SliceName.reducer exportiert.
-export default loginSlice.reducer 
+export default loginSlice.reducer;
