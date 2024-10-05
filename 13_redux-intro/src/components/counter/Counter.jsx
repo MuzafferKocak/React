@@ -5,7 +5,8 @@ import { dec, decrease, inc, increase, res, reset } from "../../store/counterRed
 const Counter = () => {
   //? Der useSelector-Hook wird zum Lesen von Daten aus dem globalen State verwendet
 
-  const count = useSelector((state) => state.count);
+//   const count = useSelector((state) => state.counter.count);
+  const {count} = useSelector((state) => state.counter);
 
   const dispatch = useDispatch();
   console.log(count);
