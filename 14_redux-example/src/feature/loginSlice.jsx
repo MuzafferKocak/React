@@ -5,9 +5,11 @@ const initialState = {
 };
 
 const loginSlice = createSlice({
-  name: "login",
+  name: "login", //? action type
   initialState: initialState,
+  //? reducer
   reducers: {
+    //? action creator func.
     setUser: (state, action) => {
       state.user = action.payload;
     },
