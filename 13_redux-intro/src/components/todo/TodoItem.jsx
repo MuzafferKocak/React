@@ -1,11 +1,18 @@
 import React from "react"
 import okLogo from "../../assets/ok.png"
 import deleteLogo from "../../assets/delete.png"
+import { delTodo, toggleTodo } from "../../store/todoReducer"
+import { useDispatch } from "react-redux"
 
 const TodoItem = ({ completed, text, id }) => {
-  const handleToggle = () => {}
-
-  const handleDelete = () => {}
+    const dispatch = useDispatch()
+  const handleToggle = () => {
+    dispatch(toggleTodo(id))
+  }
+console.log(toggleTodo);
+  const handleDelete = () => {
+    dispatch(delTodo(id))
+  }
 
   const styled = {
     textDecoration: completed ? "line-through" : "none",
