@@ -1,27 +1,30 @@
-import * as React from "react"
-import Button from "@mui/material/Button"
-import TextField from "@mui/material/TextField"
-import Link from "@mui/material/Link"
-import Box from "@mui/material/Box"
-import Avatar from "@mui/material/Avatar"
-import Typography from "@mui/material/Typography"
-import Container from "@mui/material/Container"
-import { useState } from "react"
-import {useDispatch} from "react-redux"
-import { setUser } from "../feature/loginSlice"
+import * as React from "react";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Link from "@mui/material/Link";
+import Box from "@mui/material/Box";
+import Avatar from "@mui/material/Avatar";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setUser } from "../feature/loginSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const dispatch = useDispatch()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    dispatch(setUser({email, password}))
-    setEmail("")
-    setPassword("")
-  }
+    dispatch(setUser({ email, password }));
+    navigate("/");
+    setEmail("");
+    setPassword("");
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -81,12 +84,15 @@ export default function Login() {
 
       <Typography variant="body2" color="text.success" align="center">
         {"Copyright © "}
-        <Link color="inherit" href="https://www.linkedin.com/in/muzaffer-kocak/">
+        <Link
+          color="inherit"
+          href="https://www.linkedin.com/in/muzaffer-kocak/"
+        >
           MEK
         </Link>{" "}
         {new Date().getFullYear()}
         {"."}
       </Typography>
     </Container>
-  )
+  );
 }

@@ -6,7 +6,7 @@ const initialState = {
 
 const loginSlice = createSlice({
   name: "login", //? action type
-  initialState: initialState,
+  initialState,
   //? reducer
   reducers: {
     //? action creator func.
