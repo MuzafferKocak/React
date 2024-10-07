@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import Header from "./components/Header";
 import HeaderMemo from "./components/HeaderMemo";
 import TaxComp from "./components/TaxComp";
+import UseRefComp from "./components/UseRefComp";
 
 
 function App() {
@@ -43,6 +44,9 @@ function App() {
       {/* <TaxComp taxData={taxData} /> */}
       {/* <TaxComp taxData={taxDataState} /> */}
       <TaxComp taxData={taxDataRef} />
+
+      <hr />
+      <UseRefComp/>
     </div>
   );
 }
