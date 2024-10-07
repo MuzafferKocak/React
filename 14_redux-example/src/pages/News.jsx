@@ -8,11 +8,12 @@ import { CardMedia } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getNews } from "../feature/newsSlice";
+import loadingGif from "../assets/loading.gif"
 
 const News = () => {
   const dispatch = useDispatch();
 
-  const { newsData } = useSelector((state) => state.news);
+  const { newsData, loading, error } = useSelector((state) => state.news);
   
 
   useEffect(() => {
@@ -22,6 +23,9 @@ const News = () => {
   return (
     <>
       <h1>NEWS</h1>
+      {loading && <img src={loadingGif} alt="gif"/> }
+      {error && (<Typography variant="h4" color="error">Oops Something went weong...</Typography>)}
+
       <Box
         xs={{ d: "flex" }}
         display="flex"
