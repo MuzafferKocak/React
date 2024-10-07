@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import { CardMedia } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getNews } from "../feature/newsSlice";
+import { clearNewsData, getNews } from "../feature/newsSlice";
 import loadingGif from "../assets/loading.gif"
 
 const News = () => {
@@ -17,7 +17,12 @@ const News = () => {
   
 
   useEffect(() => {
+    //! Mounting
     dispatch(getNews());
+    return ()=> {
+      //! componentWillUnmouning
+      dispatch(clearNewsData())
+    }
   }, [dispatch]);
 
   return (
