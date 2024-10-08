@@ -28,7 +28,7 @@ const UseRefComp = () => {
   return (
     <div ref={divRef}>
       <h3>UseRefComp</h3>
-      <div style={{ display: "flex", justifyContent: "center" }}>
+      <div style={{ display: "flex", justifyContent: "center", gap:"5px" }}>
         {/* <input type="text" value={text} onChange={e=>setText(e.target.value)}/>
         <button type='button' onClick={handleClick}>Search</button> */}
         <input type="text" ref={inputRef} />

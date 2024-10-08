@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {memo} from 'react'
 
 const Card = ({ data }) => {
+  console.log("Render => Card Comp")
     return (
         <div className="row row-cols-1 row-cols-md-4 g-4 p-2">
             {
@@ -33,4 +34,4 @@ const Card = ({ data }) => {
     )
 }
 
-export default Card
+export default memo(Card)
