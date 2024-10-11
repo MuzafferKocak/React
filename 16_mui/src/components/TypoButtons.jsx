@@ -31,6 +31,9 @@ const TypoButton = () => {
         <Typography variant="subtitle1" color="primary">
           Beispiel Element
         </Typography>
+        <Typography variant="subtitle1" color="primary.light">
+          Beispiel Element
+        </Typography>
         <Typography variant="subtitle2" color="secondary" mt={2}>
           Beispiel Element
         </Typography>
@@ -38,19 +41,44 @@ const TypoButton = () => {
           Beispiel Element
         </Typography>
       </Box>
-      <Typography variant="h2" align="center" color="turquoise" mt={4} flexWrap={"wrap"}>
+      <Typography
+        variant="h2"
+        align="center"
+        color="turquoise"
+        mt={4}
+        flexWrap={"wrap"}
+      >
         BUTTONS
       </Typography>
       <Stack direction={"row"} mt={3} gap={2} justifyContent={"center"}>
         <Button variant="text">Text</Button>
         <Button variant="contained">Contained</Button>
-        <Button variant="outlined" color="error">Outlined</Button>
-        <Button variant="contained" color="warning">Outlined</Button>
-        <Button variant="contained" sx={{
-          color: "black",
-          backgroundColor: "#bede",
-          ":hover": {backgroundColor: "#3ac798ed"}
-        }}>Outlined</Button>
+        <Button variant="outlined" color="error">
+          Outlined
+        </Button>
+        <Button variant="contained" color="warning">
+          Outlined
+        </Button>
+        <Button
+          variant="contained"
+          sx={{
+            color: "black",
+            backgroundColor: "#bede",
+            ":hover": { backgroundColor: "#3ac798ed" },
+          }}
+        >
+          Outlined
+        </Button>
+        <Button
+          variant="contained"
+          sx={{
+            color: "black",
+            backgroundColor: "secondary.light",
+            ":hover": { backgroundColor: "secondary.dark" },
+          }}
+        >
+          Outlined
+        </Button>
       </Stack>
     </>
   );
