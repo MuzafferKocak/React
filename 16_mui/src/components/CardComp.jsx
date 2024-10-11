@@ -16,7 +16,7 @@ export default function CardComp() {
         {data.map(item => (<Grid2 item sm={6} md={4} >
             <Card >
         <CardMedia
-        sx={{ height: 340, width: 585}}
+        sx={{ height: 440, width: 585}}
           component="img"
           image={item.img}
           title="green iguana"
